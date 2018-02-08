@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.login1"
+    android:installLocation="internalOnly">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/image"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.RegisterActivity" />
+        <activity android:name=".activities.PatientActivity" />
+        <activity android:name=".activities.DonorActivity" />
+        <activity android:name=".activities.SearchActivity" />
+        <activity android:name=".activities.DonorListActivity" />
+        <activity android:name=".activities.SearchActivitySample" />
+        <activity android:name=".activities.GetLocation" />
+        <activity android:name=".activities.LocationActivity" />
+
+        <service
+            android:name=".classes.LocationService"
+            android:enabled="true" />
+
+        <receiver android:name=".classes.LocationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activities.BloodRequestInfo" />
+        <activity android:name=".activities.RequestsActivity" />
+        <activity android:name=".activities.RequestSentActivity"></activity>
+    </application>
+
+</manifest>
